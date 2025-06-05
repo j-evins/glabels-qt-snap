@@ -1,0 +1,25 @@
+# This workflow builds a snap package of development snapshot
+      
+
+name: Build snap
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Snapcraft
+        run: |
+          sudo snap install snapcraft --classic
+
+      - name: Build Snap
+        run: |
+          snapcraft
+
+      - name: Upload Snap artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-snap
+          path: '*.snap'
