@@ -3,6 +3,10 @@
 
 name: Build snap
 
+on:
+  push:
+    branches: [ master ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
