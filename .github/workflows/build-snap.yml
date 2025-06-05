@@ -19,7 +19,7 @@ jobs:
         run: |
           sudo snap install lxd
           sudo snap install snapcraft --classic
-	  lxd init
+          lxd init
 
       - name: Build Snap
         run: |
