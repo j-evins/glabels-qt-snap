@@ -15,15 +15,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Snapcraft
-        run: |
-          sudo snap install lxd
-          sudo snap install snapcraft --classic
-          sudo lxd init --auto
-
-      - name: Build Snap
-        run: |
-          snapcraft
+      - name: Set up and run Snapcraft
+        uses: snapcore/action-build@v1
 
       - name: Upload Snap artifact
         uses: actions/upload-artifact@v4
