@@ -17,6 +17,7 @@ jobs:
 
       - name: Set up Snapcraft
         run: |
+          sudo snap install lxd
           sudo snap install snapcraft --classic
 
       - name: Build Snap
