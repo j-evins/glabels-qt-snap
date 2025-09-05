@@ -14,7 +14,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        #repository: j-evins/glabels-qt.git
+        repository: j-evins/glabels-qt.git
+	ref: master
         # Checkout full-depth to facilitate auto versioning
         fetch-depth: 0
 
